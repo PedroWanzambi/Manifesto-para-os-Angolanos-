@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifesto do Jovem Mestre SILOÉ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+            animation: fadeInDown 1s ease;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.4em;
+            font-style: italic;
+            opacity: 0.95;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .pillar {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            animation: fadeInUp 1s ease;
+        }
+
+        .pillar:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+            border-color: rgba(102, 126, 234, 0.6);
+        }
+
+        .pillar-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
+        }
+
+        .pillar h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #f093fb;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .pillar p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .pillar ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .pillar li {
+            font-size: 1.1em;
+            line-height: 2;
+            margin: 10px 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .principles {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: #1a1a2e;
+            padding: 50px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(250, 112, 154, 0.4);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .principles h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .principle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .principle-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .principle-card:hover {
+            transform: scale(1.05);
+        }
+
+        .principle-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 60px;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer p {
+            font-size: 1.3em;
+            font-style: italic;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .quote {
+            font-size: 1.8em;
+            font-style: italic;
+            text-align: center;
+            margin: 50px 0;
+            padding: 30px;
+            border-left: 5px solid #f093fb;
+            background: rgba(240, 147, 251, 0.1);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+            .pillar h2 {
+                font-size: 1.6em;
+            }
+            .principles h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚡ MANIFESTO ⚡</h1>
+            <div class="subtitle">do Jovem Mestre SILOÉ</div>
+            <p style="margin-top: 20px; font-size: 1.1em;">Revolucionando Investimentos Através da Educação e Verdade</p>
+        </div>
+
+        <div class="quote">
+            "Num mundo onde prometem transformar 4 USD em 10 enquanto você dorme, eu escolho acordar as pessoas com conhecimento real."
+        </div>
+
+        <div class="pillar">
+            <span class="pillar-number">1</span>
+            <h2>🛡️ A Verdade Acima das Ilusões</h2>
+            <p>Vivemos numa era onde a ignorância financeira é explorada. Promessas impossíveis seduzem os despreparados. Multiplicar dinheiro "enquanto você dorme" não é investimento — é armadilha.</p>
+            <p><strong>Eu acredito:</strong> A educação financeira é a única arma verdadeira contra fraudes. Não vendo sonhos impossíveis. Vendo conhecimento que liberta.</p>
+        </div>
+
+        <div class="pillar">
+            <span class="pillar-number">2</span>
+            <h2>💼 Negócios Reais, Lucros Reais</h2>
+            <p>Meu modelo é transparente: produtos físicos, margens claras, riscos calculados. Nada de esquemas piramidais ou promessas vazias.</p>
+            <p><strong>Exemplo Real:</strong></p>
+            <ul>
+                <li>Capital inicial: 50.000 Kzs (dois sócios, 25k cada)</li>
+                <li>Produto: Relógios + acessórios premium</li>
+                <li>Lucro por unidade: 4.000 - 10.000 Kzs</li>
+                <li>Canal: 100% online com entregas gratuitas</li>
+                <li>Transparência total: riscos conhecidos, margens reais</li>
+            </ul>
+            <p>Não há mágica. Há estratégia, trabalho e honestidade.</p>
+        </div>
+
+        <div class="pillar">
+            <span class="pillar-number">3</span>
+            <h2>📱 Marketing com Propósito</h2>
+            <p>Marketing não é manipulação. É conexão autêntica com pessoas que precisam do que você oferece.</p>
+            <p><strong>Minha Filosofia em 4 Fases:</strong></p>
+            <ul>
+                <li><strong>Fase 1 - Antecipação:</strong> Construir expectativa sem mentiras</li>
+                <li><strong>Fase 2 - Lançamento:</strong> Explosão estratégica com prova social real</li>
+                <li><strong>Fase 3 - Consolidação:</strong> Manter momentum com conteúdo valioso</li>
+                <li><strong>Fase 4 - Sustentabilidade:</strong> Crescimento escalável e fidelização</li>
+            </ul>
+            <p>Cada fase tem propósito. Cada ação tem resultado mensurável.</p>
+        </div>
+
+        <div class="pillar">
+            <span class="pillar-number">4</span>
+            <h2>🎯 Educação Como Revolução</h2>
+            <p>Minha missão não é apenas vender. É ensinar. Mostrar que:</p>
+            <ul>
+                <li>Capital apertado NÃO é desculpa — é desafio criativo</li>
+                <li>Frete grátis pode ser estratégia, não prejuízo</li>
+                <li>Marketing digital não precisa ser caro para ser eficaz</li>
+                <li>Calendário de conteúdo transforma caos em consistência</li>
+                <li>Dados são amigos, não inimigos — métricas guiam decisões</li>
+            </ul>
+        </div>
+
+        <div class="principles">
+            <h2>🔥 MEUS PRINCÍPIOS INEGOCIÁVEIS 🔥</h2>
+            <div class="principle-grid">
+                <div class="principle-card">
+                    <h3>💎 Transparência</h3>
+                    <p>Sem promessas vazias. Só resultados realistas.</p>
+                </div>
+                <div class="principle-card">
+                    <h3>📚 Educação</h3>
+                    <p>Conhecimento é poder. Ignorância é perigo.</p>
+                </div>
+                <div class="principle-card">
+                    <h3>⚡ Ação</h3>
+                    <p>Planejamento sem execução é apenas sonho.</p>
+                </div>
+                <div class="principle-card">
+                    <h3>🎯 Estratégia</h3>
+                    <p>Cada decisão baseada em dados e lógica.</p>
+                </div>
+                <div class="principle-card">
+                    <h3>🛡️ Proteção</h3>
+                    <p>Defender os vulneráveis contra golpes.</p>
+                </div>
+                <div class="principle-card">
+                    <h3>🚀 Crescimento</h3>
+                    <p>Escalável, sustentável, e sempre ético.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pillar">
+            <span class="pillar-number">5</span>
+            <h2>🌍 Minha Visão de Futuro</h2>
+            <p>Vejo um mundo onde:</p>
+            <ul>
+                <li>Jovens angolanos sabem diferenciar investimento de golpe</li>
+                <li>Educação financeira é acessível a todos, não privilégio de poucos</li>
+                <li>Empreendedores constroem negócios honestos com margens reais</li>
+                <li>Marketing digital é ferramenta de conexão, não enganação</li>
+                <li>Sucesso é medido em vidas impactadas, não só em lucros</li>
+            </ul>
+        </div>
+
+        <div class="quote">
+            "Não prometo riqueza enquanto você dorme. Prometo acordar sua mente para construir riqueza enquanto você trabalha com inteligência."
+        </div>
+
+        <div class="footer">
+            <h2>⚔️ O CHAMADO ⚔️</h2>
+            <p>Este manifesto não é apenas meu. É de todos que escolhem:</p>
+            <p><strong>VERDADE sobre ilusão.</strong></p>
+            <p><strong>EDUCAÇÃO sobre exploração.</strong></p>
+            <p><strong>TRABALHO INTELIGENTE sobre promessas vazias.</strong></p>
+            <p style="margin-top: 40px; font-size: 1.8em; font-weight: bold;">
+                Junte-se à revolução. Construa com propósito.
+            </p>
+            <p style="margin-top: 20px; font-size: 1.3em; color: #f093fb;">
+                — Jovem Mestre SILOÉ
+            </p>
+        </div>
+    </div>
+</body>
+</html>
